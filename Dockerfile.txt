@@ -1,0 +1,11 @@
+# Use an official OpenJDK image
+FROM openjdk:17-jdk-slim
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the JAR file from the repository into the container
+COPY target/orderMicroservice-0.0.1-SNAPSHOT.jar /app/orderMicroservice-0.0.1-SNAPSHOT.jar
+
+# Run the JAR file when the container starts
+CMD ["java", "-jar", "orderMicroservice-0.0.1-SNAPSHOT.jar"]
